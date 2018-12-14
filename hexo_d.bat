@@ -2,3 +2,4 @@
 cd %~d0
 cd %cd%
 hexo d
+exit

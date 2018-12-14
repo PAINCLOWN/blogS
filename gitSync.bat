@@ -1,5 +1,5 @@
 @echo off
-@title bat 交互执行git命令
+@title 同步blogS项目到github
 
 cd  %~d0
 cd  %cd%
@@ -55,7 +55,4 @@ echo;
 echo 同化完成！
 echo;
 
-=======
-git status
 
-pause

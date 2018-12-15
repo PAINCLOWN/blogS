@@ -1,5 +1,6 @@
 ---
 title: github子目录创建hexo博客
+categories: 站点相关
 ---
 
 # #文章参考1

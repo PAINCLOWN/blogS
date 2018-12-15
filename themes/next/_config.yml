@@ -139,7 +139,7 @@ exturl: false
 menu:
   home: / || home
   categories: /categories/ || th
-  tags: /tags/ || tags
+  #tags: /tags/ || tags
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap

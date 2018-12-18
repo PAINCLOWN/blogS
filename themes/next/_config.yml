@@ -180,7 +180,7 @@ social:
   E-Mail: mailto:pozz@vip.qq.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
+  Twitter: https://twitter.com/Pa1ncl0wn || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
@@ -879,9 +879,9 @@ canvas_nest:
   enable: true
   onmobile: true # display on mobile or not
   color: '243,59,31' # RGB values, use ',' to separate
-  opacity: 0.5 # the opacity of line: 0~1
+  opacity: 0.9 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
-  count: 50 # the number of lines
+  count: 80 # the number of lines
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three

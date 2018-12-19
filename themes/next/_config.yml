@@ -141,10 +141,11 @@ menu:
   categories: /categories/ || th
   #tags: /tags/ || tags
   archives: /archives/ || archive
+  python: http://PAINCLOWN.github.io/python || file-code-o
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  about: /about/ || user
+  #about: /about/ || user
   mainHome: http://PAINCLOWN.github.io || flag
 
 # Enable/Disable menu icons / item badges.

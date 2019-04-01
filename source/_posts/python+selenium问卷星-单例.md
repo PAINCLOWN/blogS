@@ -29,6 +29,7 @@ class wjx():
         if cls.instance is None:
             cls.instance = super().__new__(cls)
         return cls.instance
+
     def __init__(self, time, questionNum):
         #判断是否初始化，如果初始化，则直接返回
         if wjx.init_flag:
@@ -46,6 +47,7 @@ class wjx():
         self.titleAgain = ''
         self.titleAfter = ''
         wjx.init_flag = True
+
     def randomIndex(self , *option):
         #根据元祖长度生成随机index
         randomOptionIndex =  random.randint(0 , len(option) - 1)
@@ -86,7 +88,6 @@ class wjx():
             self.browser.switch_to_alert().accept()
         except:
             pass
-
         self.titleAfter = self.browser.title
         #判断页面是否跳转，未跳转则递归重新处理选项
         if self.jumpPage(self.titleAgain , self.titleAfter):
@@ -147,12 +148,14 @@ def wjxTitle():
     print("对京东网上平台消费者满意度的问卷调查")
     print("#" * 50)
 
-wjxTitle()
+def main():
+    wjxTitle()
+    loopTimes = int(input("输入要刷的数量："))
+    questionNum = int(input("输入问卷上问题的个数："))
+    run(loopTimes , questionNum)
 
-loopTimes = int(input("输入要刷的数量："))
-questionNum = int(input("输入问卷上问题的个数："))
-run(loopTimes , questionNum)
-
+if __name__ == "__main__":
+    main()
 
 ```
 

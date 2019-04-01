@@ -1,12 +1,13 @@
 ---
 title: python+selenium问卷星
-date: 2019-3-29
+date: 2019-4-1
 tags: 问卷星
 categories: CODE
 ---
 
-上一篇写的是python+splinter，没有再继续写了，因为实在是没什么可写的，复用太差，也没必要完善了。
-所以直接用selenium重新写一个，目前基本上问卷星**纯选项**的页面应该都能匹配吧。
+用单例写了一下，哈哈哈哈哈
+
+其他没变动，等出现新的状况再更新。
 
 ``` javascript
 from selenium.webdriver.chrome.options import Options
@@ -15,8 +16,20 @@ import time
 import random
 import re
 
-class wjx:
+class wjx():
+    #用来判断是否创建内存空间
+    instance = None
+    # 用来判断是否初始化
+    init_flag = False
+    def __new__(cls, *args, **kwargs):
+        #如果创建内存，则不用再创建直接返回
+        if cls.instance is None:
+            cls.instance = super().__new__(cls)
+        return cls.instance
     def __init__(self, time, questionNum):
+        #判断是否初始化，如果初始化，则直接返回
+        if wjx.init_flag:
+            return
         #间隔时间
         self.time_second = time
         #初始化一个空列表
@@ -29,6 +42,7 @@ class wjx:
         #self.browser = webdriver.Chrome()
         self.titleAgain = ''
         self.titleAfter = ''
+        wjx.init_flag = True
     def randomIndex(self , *option):
         #根据元祖长度生成随机index
         randomOptionIndex =  random.randint(0 , len(option) - 1)
@@ -132,6 +146,3 @@ run(loopTimes , questionNum)
 
 
 ```
-
-舒服了 功能基本都实现了，哈哈哈哈，别说我写的烂。
-

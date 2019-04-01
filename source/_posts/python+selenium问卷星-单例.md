@@ -127,7 +127,13 @@ def run(count , questionNum):
         #控制总体勾选速度
         shua = wjx(0.1 , questionNum)
         print("正在进行第%d次操作" % j)
-        shua.grid()
+        try:
+            shua.grid()
+        #捕获未知异常并且打印出来
+        except Exception as result:
+            print("出现异常：%s" % result)
+            print("停止运行")
+            break
         shua.gridOver()
         print("第%d次操作结束" % j)
         proportion = (j / count)*100

@@ -1,9 +1,12 @@
 ---
-title: python+selenium问卷星
+title: python+selenium问卷星-单例
 date: 2019-4-1
 tags: 问卷星
 categories: CODE
 ---
+上一篇写的是python+splinter，没有再继续写了，因为实在是没什么可写的，复用太差，也没必要完善了。
+
+所以直接用selenium重新写一个，目前基本上问卷星纯选项的页面应该都能匹配吧。
 
 用单例写了一下，哈哈哈哈哈
 
@@ -146,3 +149,5 @@ run(loopTimes , questionNum)
 
 
 ```
+
+舒服了 功能基本都实现了，哈哈哈哈，别说我写的烂。

@@ -1,6 +1,6 @@
 ---
 title: python问卷星自动随机勾选
-date: 2019-4-3
+date: 2019-4-4
 tags: 问卷星
 categories: CODE
 ---
@@ -14,12 +14,22 @@ categories: CODE
 	主要是核心处理部分。可以导入模块单独使用。
 	
 	*代码比较凌乱也写了很多备注
+	
+	2019-4-3
+	发布代码
+	2019-4-4
+	修复判断url.txt的逻辑错误
+	增加最后一次任务处理后无需再静默等待
 
 
 ### wjxConfig.py
 
 ``` javascript
+'''
+Author: PA1NCL0WN
+'''
 import wjx as wjxModle
+import time
 
 class config():
 
@@ -46,7 +56,10 @@ class config():
 
 
 def judgeFile():
-    file = open("url.txt" , "w+")
+    try:
+        file = open("url.txt")
+    except:
+        file = open("url.txt" , "w+")
     configStr = file.read()
     file.close()
     if configStr == "":
@@ -101,6 +114,7 @@ def saveConfig():
             congfigUrl = file.read()
             print(congfigUrl)
             print("保存成功")
+            time.sleep(3)
             break
         elif choose in ["N", "n"]:
             file = open("url.txt" , "w")
@@ -126,11 +140,15 @@ if __name__ == "__main__":
 ### wjx.py
 
 ``` javascript
+'''
+Author: PA1NCL0WN
+'''
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import time
 import random
 import re
+
 
 class wjx():
     #用来判断是否创建内存空间
@@ -223,7 +241,7 @@ class wjx():
     #判断页面是否跳转如果title相等就是没有跳转返回1，不相等就是跳转返回0
     def jumpPage(self , titleAgain , titleAfter):
         if titleAgain == titleAfter:
-            print("页面未跳转，有填写选项，重新勾选ing")
+            print("页面未跳转,选项不满足条件，重新勾选ing")
             return True
 
         else:
@@ -278,9 +296,11 @@ def run(count , questionNum , url):
         print("第%d次操作结束" % j)
         proportion = (j / count)*100
         print("处理进度：【%i/%i】·【%i%%】" % (j, count, proportion))
-        tempS = random.randint(15, 21)
-        print("随机静默15~21s:【%ds】" % tempS)
-        time.sleep(tempS)
+        while j != count:
+            tempS = random.randint(15, 21)
+            print("随机静默15~21s:【%ds】" % tempS)
+            time.sleep(tempS)
+            break
 
 
 def main():

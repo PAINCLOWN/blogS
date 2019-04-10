@@ -20,7 +20,9 @@ categories: CODE
 	2019-4-4
 	修复判断url.txt的逻辑错误
 	增加最后一次任务处理后无需再静默等待
-
+	2019-4-10
+	pyinstall打包成exe，应该只需要安装chrome再运行就可以了
+	详情见文章底部
 
 ### wjxConfig.py
 
@@ -317,3 +319,7 @@ if __name__ == "__main__":
 
 
 ```
+
+> 链接: https://pan.baidu.com/s/1sDyAeaoWuIU-Awryhae1pQ 
+> 
+> 提取码: xjgg

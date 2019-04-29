@@ -5,7 +5,7 @@ tags: Excel
 categories: CODE
 ---
 
-^[突然有个需求需要把Excel中的人名转换成js保存为指定的格式]
+> 突然有个需求需要把Excel中的人名转换成js保存为指定的格式
 
 虽然人数不多可以手动复制
 
@@ -16,6 +16,7 @@ categories: CODE
 就写了一个py脚本
 
 用的是xlrd模块
+
 
 ``` javascript
 '''

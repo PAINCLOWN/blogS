@@ -1,5 +1,5 @@
 ---
-title: 通讯录Excel转指定js
+title: xlrd模块-通讯录Excel转指定js
 date: 2019-4-29
 tags: Excel
 categories: CODE
@@ -16,6 +16,10 @@ categories: CODE
 就写了一个py脚本
 
 用的是xlrd模块
+
+但是非常不好用，因为莫名其妙的没有提示了
+
+就是你不能知道创建的对象下面有什么方法（无奈准备放弃xlrd）
 
 
 ``` javascript
